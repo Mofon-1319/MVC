@@ -1,0 +1,77 @@
+﻿@model WebApp.Entity.BusEntity
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "BusDetail", FormMethod.Post))
+{
+    <table cellpadding="10">
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.BusType)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.BusType)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.seats)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.seats)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.source)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.source)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.destination)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.destination)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.arrivalTime)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.arrivalTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.departureTime)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.departureTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.rate)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.rate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Back to List", "Index")
+            </td>
+            <td>
+                <input type="submit" id="Add" />
+            </td>
+
+        </tr>
+    </table>
+}

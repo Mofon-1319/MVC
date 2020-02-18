@@ -1,0 +1,69 @@
+﻿@model WebApp.Entity.BusEntity
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Update", "RestaurantDetails", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.seats)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.seats)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.source)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.source)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.destination)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.destination)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.arrivalTime)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.arrivalTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.departureTime)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.departureTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.rate)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.rate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Cancel", "Index")
+            </td>
+            <td>
+                <input type="submit" id="Update" />
+            </td>
+
+        </tr>
+    </table>
+}

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApp.Entity.BusEntity>
+@{
+    ViewBag.Title = "ViewAllDetails";
+}
+
+<h2>ViewAllDetails</h2>
+
+<table border="1">
+    <tr>
+        <td>
+            Bus Type
+        </td>
+        <td>
+            Seats
+        </td>
+        <td>
+            Source
+        </td>
+        <td>
+            Destination
+        </td>
+        <td>
+            Arrival Time
+        </td>
+        <td>
+            Departure Time
+        </td>
+        <td>
+            Rate
+        </td>
+    </tr>
+    @foreach (WebApp.Entity.BusEntity item in (List<WebApp.Entity.BusEntity>)TempData["BusDetail"])
+    {
+        <tr>
+            <td>
+                @item.BusType
+            </td>
+            <td>
+                @item.seats
+            </td>
+            <td>
+                @item.source
+            </td>
+            <td>
+                @item.destination
+            </td>
+            <td>
+                @item.arrivalTime
+            </td>
+            <td>
+                @item.departureTime
+            </td>
+            <td>
+                @item.rate
+            </td>
+        </tr>
+    }
+</table>

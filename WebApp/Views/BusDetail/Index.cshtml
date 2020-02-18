@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApp.Entity.BusEntity>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Create new Restaurant", "Create")
+<br />
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"])
+}
+@foreach (WebApp.Entity.BusEntity busEntity in @Model)
+{
+    <table border="1">
+        <tr>
+            <td>
+                @busEntity.BusType
+            </td>
+            <td>
+                @busEntity.seats
+            </td>
+            <td>
+                @busEntity.source
+            </td>
+            <td>
+                @busEntity.destination
+            </td>
+            <td>
+                @busEntity.arrivalTime
+            </td>
+            <td>
+                @busEntity.departureTime
+            </td>
+            <td>
+                @busEntity.rate
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { restaurantName = busEntity.BusType })
+                @Html.ActionLink("Delete", "Delete", new { restaurantName = busEntity.BusType })
+            </td>
+
+        </tr>
+
+    </table>
+}
