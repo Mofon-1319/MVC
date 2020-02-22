@@ -11,18 +11,20 @@ namespace WebApp.DAL
     {
         static List<BusEntity> busList = new List<BusEntity>();
 
-        static void BusRepositary()
+        static BusRepository()
         {
             BusEntity Bus = new BusEntity("Sleeper", 25, "Chennai", "Bangalore", "10:00PM","5:00AM",750);
             busList.Add(Bus);
             Bus = new BusEntity("Semi-Sleeper", 35, "Chennai", "Trichy", "10:00AM", "1:00PM", 550);
             busList.Add(Bus);
+
         }
 
         public IEnumerable<BusEntity> Display()
         {
             return busList;
         }
+
         public void AddBus(BusEntity busEntity)
         {
             busList.Add(busEntity);

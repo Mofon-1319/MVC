@@ -1,19 +1,20 @@
-﻿@model IEnumerable<WebApp.Entity.BusEntity>
+﻿@Model IEnumerable<WebApp.Entity.BusEntity>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-@Html.ActionLink("Create new Restaurant", "Create")
+@Html.ActionLink("Add new bus", "Create")
 <br />
 @if (TempData["Message"] != null)
 {
     @Html.Label((string)TempData["Message"])
 }
-@foreach (WebApp.Entity.BusEntity busEntity in @Model)
-{
-    <table border="1">
+<table border="1">
+    @foreach (var busEntity in @Model)
+    {
+
         <tr>
             <td>
                 @busEntity.BusType
@@ -44,5 +45,6 @@
 
         </tr>
 
-    </table>
-}
+
+    }
+</table>

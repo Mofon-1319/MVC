@@ -14,9 +14,9 @@ namespace WebApp.Controllers
         BusRepository busRepository = new BusRepository();
         public ViewResult Index()
         {
-
             IEnumerable<BusEntity> busList = busRepository.Display();
-            return View(busList);
+            ViewBag.BusDetail = busList;
+            return View();
         }
         public ViewResult BusDetailsDisplay()
         {
@@ -46,10 +46,8 @@ namespace WebApp.Controllers
         }
         [HttpPost]
         [ActionName("Create")]
-        public ActionResult CreateUpdate()
+        public ActionResult CreateUpdate([Bind(Include ="Seats")]BusEntity busEntity)
         {
-            BusEntity busEntity = new BusEntity();
-            TryUpdateModel(busEntity);
             busRepository.AddBus(busEntity);
             TempData["Message"] = "Bus Added";
             return RedirectToAction("Index");
